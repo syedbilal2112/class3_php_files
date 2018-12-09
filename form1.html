@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<form>
+
+		<input type="text" name="name" placeholder="Enter your name" class="form-control" id="name">
+		<input type="email" name="email" placeholder="Enter your email" class="form-control" id="email">
+		<input type="password" name="password" placeholder="Enter your password" class="form-control" id="password">
+		<input type="button" name="submit" value="Register" class="btn btn-primary" id="button">
+
+	</form>
+
+<script type="text/javascript">
+	$(function(){
+		$('#button').click(function(){
+			var name = $('#name').val()
+			var email = $('#email').val()
+			var password = $('#password').val()
+			$.ajax({
+				url:"insert.php",
+				type:"post",
+				data:{
+					name:name,
+					email:email,
+					password:password
+				},
+				success:function(response){
+					alert(response)
+				},
+				error:function(response){
+					alert(response)
+				}
+			})
+		})
+		
+	})
+</script>
+</body>
+</html>
