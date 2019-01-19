@@ -88,7 +88,7 @@ $mail1->SMTPOptions = array(
     $mail1->AltBody =  strip_tags($body);
     $mail1->send();
         $message="Thank your contacting us we will get back to you soon";
-    header("location: ../contact.html");
+    header("location: ../contact.php");
 
   
 } catch (Exception $e) {
